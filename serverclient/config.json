@@ -1,0 +1,6 @@
+{
+  "server": {
+    "host": "127.0.0.1",  // Replace with your server's IP address
+    "port": 12345          // Replace with the desired port number
+  }
+}
