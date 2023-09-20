@@ -1,0 +1,92 @@
+Server1:
+
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim-buster
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY server1.py /app/
+COPY config_2server_client.json /app/
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable
+ENV NAME Server1
+
+# Run app.py when the container launches
+CMD ["python", "server1.py"]
+
+  Commands:
+
+server1:
+
+$ sudo docker build -t server1 -f Dockerfile.server1
+$ sudo docker images
+$ sudo docker run -it server1
+  
+Server2:
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim-buster
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY server1.py /app/
+COPY config_2server_client.json /app/
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable
+ENV NAME Server2
+
+# Run app.py when the container launches
+CMD ["python", "server2.py"]
+
+  server2:
+Commands:
+
+$ sudo docker build server2 -f Dockerfile.server2
+$ sudo docker images
+$ sudo docker run -it server2
+
+
+  Client:
+
+
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim-buster
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY client1.py /app/
+COPY config_2server_client.json /app/
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define environment variable
+ENV NAME Client1
+
+# Run app.py when the container launches
+CMD ["python", "client1.py"]
+
+
+commands:
+
+client1:
+
+$ sudo docker build client1 -f Dockerfile.client1
+$ sudo docker images
+$ sudo docker run -it client1
+
+
+
+
+
