@@ -5,7 +5,7 @@ WORKDIR /testwork
 
 
 
-COPY person.xml /testwork/
+
 # Copy the Python script to the container
 COPY getapi.py /testwork/
 
