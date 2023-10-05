@@ -53,7 +53,7 @@ pipeline {
 
                 script {
 
-                    withCredentials([file(credentialsId: 'rama', variable: 'PRIVATE_KEY_FILE')]) {
+                    withCredentials([file(credentialsId: 'rupasree', variable: 'PRIVATE_KEY_FILE')]) {
 
                         sh """
 
