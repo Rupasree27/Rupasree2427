@@ -12,12 +12,12 @@ FROM python:3.8-slim
 
 WORKDIR /testwork
 
-COPY ace.py /testwork/
+COPY asc.py /testwork/
 
 # Run the Python script when the container launches
 
  
 
-ENTRYPOINT ["python", "/testwork/ace.py"]
+ENTRYPOINT ["python", "/testwork/asc.py"]
 
  
