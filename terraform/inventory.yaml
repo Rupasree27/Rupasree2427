@@ -1,0 +1,17 @@
+
+all:
+
+  children:
+
+    my_group:
+
+      hosts:
+
+        host1:
+
+          ansible_host: 54.206.5.169
+
+          ansible_user: ubuntu
+
+          ansible_ssh_private_key_file: /home/user/terraform/Rupasree
+
